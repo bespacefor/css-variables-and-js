@@ -1,0 +1,242 @@
+/* CSS Custom Properties */
+:root {
+    --base: #ffc600;
+    --spacing: 10px;
+    --blur: 0px;
+    --sepia: 0%;
+    --hue-rotate: 0deg;
+    --contrast: 100%;
+    --grayscale: 0%;
+    --invert: 0%;
+    --opacity: 100%;
+    --saturate: 100%;
+    --brightness: 100%;
+}
+
+.highlight {
+    color: var(--base);
+}
+
+img {
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur)) sepia(var(--sepia)) hue-rotate(var(--hue-rotate)) contrast(var(--contrast)) grayscale(var(--grayscale)) invert(var(--invert)) opacity(var(--opacity)) saturate(var(--saturate)) brightness(var(--brightness));
+    max-width: 70vmax;
+    max-height: 70vh;
+}
+
+/* CSS Styles */
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Antonio', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: violet;    
+}
+
+.header_visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+.wrapper_content {
+    margin: 0 5vw;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 2vw;
+}
+
+.wrapper_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper_filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: rgba(230, 206, 182, 0.966);
+    border-radius: 14px;
+    box-shadow: 5px 5px 25px 3px black;
+}
+
+label {
+    text-transform: uppercase;
+}
+
+input {
+    width: 10vw;
+}
+
+p {
+    color: white;
+    position: absolute;
+    bottom: 1vh;
+    left: 1vw;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: .8rem;
+    font-weight: normal;
+}
+
+/* Media queries */
+@media (min-width: 768px) and (max-width: 1020px) {
+    h2 {
+        margin-bottom: 15px; 
+    }
+
+    img {
+        max-width: 60vmax;
+        max-height: 60vh;
+    }
+
+    .container {
+        grid-template-rows: 1fr .5fr;
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+        text-align: start;
+    }
+
+    input {
+        margin-top: 1.5vh;
+    }
+
+    #base {
+        margin-top: .5vh;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 5%;
+    }
+    
+    img {
+        max-width: 40vmax;
+        max-height: 40vh;
+    }
+
+    .container {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 2vh;
+    }
+
+    .filters {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+        padding: 15px;
+        text-align: start;
+        font-size: .9rem;
+    }
+    
+    input {
+        margin-top: .5vh;
+    }
+
+    p {
+        left: 37%;
+        bottom: 1%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 5%;
+    }
+
+    img {
+        max-width: 40vmax;
+        max-height: 40vh;
+    }
+
+    .container {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 1vh;
+    }
+
+    .filters {
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1vw;
+        text-align: start;
+        font-size: .7rem;
+        padding: 10px;
+    }
+
+    input {
+        width: 15vw;
+    }
+
+    p {
+        left: 33%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 5%;
+    }
+
+    img {
+        max-width: 30vmax;
+        max-height: 30vh;
+    }
+
+    .container {
+        grid-template-rows: .5fr 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 5vh;
+    }
+
+    .filters {
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1vw;
+        text-align: start;
+        font-size: .7rem;
+        padding: 10px;
+    }
+
+    input {
+        width: 20vw;
+    }
+
+    p {
+        display: none;
+    }
+}
